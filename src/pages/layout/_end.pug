@@ -1,0 +1,25 @@
+input#modal-close.modal__checkbox(type="checkbox")
+aside.modal
+  label.modal__bg(for="modal-close")
+  ._col-12.modal__form-box
+    form._row.modal__form._p-n(action="/mail.php" method="POST")
+      ._col-12.modal__caption
+        | Свяжитесь с нами прямо сейчас
+      ._col-12.modal__text
+        | Оставьте свой номер телефона и&nbsp;мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;рабочее время
+      ._col-12
+        input.input.modal__input#modal-name(name="name" type="text" placeholder=" " required="required")
+        label.modal__label(for="modal-name") Имя*
+      ._col-12
+        input.input.modal__input#modal-phone(name="phone" type="tel" placeholder=" " required="required")
+        label.modal__label(for="modal-phone") Телефон*
+      ._col-12
+        input.input.modal__input#modal-email(name="email" type="email" placeholder=" " required="required")
+        label.modal__label(for="modal-email") Почта*
+      ._col-12
+        button.button.modal__button(type="submit")
+          | Оставить заявку
+      .modal__label-box
+        | Нажимая на&nbsp;данную кнопку, Вы&nbsp;соглашаетесь&nbsp;с
+        a.link(href="/privacy-policy/" target="_blank") политикой конфиденциальности
+  label.modal__close(for="modal-close")

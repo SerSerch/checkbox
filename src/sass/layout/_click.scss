@@ -1,0 +1,17 @@
+.check-box {
+  display: none;
+  &:checked + .label-box {
+    display: none;
+  }
+}
+
+.label-box {
+  display: flex;
+  max-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: #e64741;
+}

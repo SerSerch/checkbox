@@ -1,0 +1,164 @@
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$container-sm: 570px;
+$container-md: 750px;
+$container-lg: 990px;
+$container-xl: 1070px;
+
+@mixin col($column) {
+  flex: 0 0 (100% / 12) * $column;
+  max-width: (100% / 12) * $column;
+}
+
+@mixin offset($column) {
+  margin-left: (100% / 12) * $column;
+}
+
+@mixin ml($column) {
+  margin-right: (100% / 12) * $column;
+}
+
+._container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+._row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+._col {
+  position: relative;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+
+  @for $i from 1 to 5 {
+    &-#{$i*3} {
+      @extend ._col;
+      @include col($i*3);
+    }
+  }
+
+  @for $i from 1 to 13 {
+    &-sm-#{$i},
+    &-md-#{$i},
+    &-lg-#{$i},
+    &-xl-#{$i} {
+      @extend ._col;
+    }
+  }
+}
+
+._offset {
+  margin-left: auto;
+
+  @for $i from 0 to 7 {
+    &-#{$i} {
+      @include offset($i);
+    }
+  }
+}
+
+._ml {
+  margin-right: auto;
+
+  @for $i from 0 to 7 {
+    &-#{$i} {
+      @include ml($i);
+    }
+  }
+}
+
+@media (min-width: $sm) {
+  ._container {
+    max-width: $container-sm;
+  }
+
+  @for $i from 1 to 13 {
+    ._col-sm-#{$i} {
+      @include col($i);
+    }
+
+    ._offset-sm-#{$i} {
+      @include offset($i);
+    }
+
+    ._ml-sm-#{$i} {
+      @include ml($i);
+    }
+  }
+}
+
+@media (min-width: $md) {
+  ._container {
+    max-width: $container-md;
+  }
+
+  @for $i from 1 to 13 {
+    ._col-md-#{$i} {
+      @include col($i);
+    }
+
+    ._offset-md-#{$i} {
+      @include offset($i);
+    }
+
+    ._ml-md-#{$i} {
+      @include ml($i);
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  ._container {
+    max-width: $container-lg;
+  }
+
+  @for $i from 1 to 13 {
+    ._col-lg-#{$i} {
+      @include col($i);
+    }
+
+    ._offset-lg-#{$i} {
+      @include offset($i);
+    }
+
+    ._ml-lg-#{$i} {
+      @include ml($i);
+    }
+  }
+}
+
+@media (min-width: $xl) {
+  ._container {
+    max-width: $container-xl;
+  }
+
+  @for $i from 1 to 13 {
+    ._col-xl-#{$i} {
+      @include col($i);
+    }
+
+    ._offset-xl-#{$i} {
+      @include offset($i);
+    }
+
+    ._ml-xl-#{$i} {
+      @include ml($i);
+    }
+  }
+}
+
+._ptb-n {
+  padding: 0 15px;
+}
+
+._p-n {
+  padding: 0;
+}
