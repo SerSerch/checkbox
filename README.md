@@ -1,6 +1,6 @@
 # checkbox
 
-* [Установить Node.js](https://nodejs.org/ru/)
+* [Установить Node.js LTS версию](https://nodejs.org/ru/)
 
 * в редакторе кода открыть Terminal и выполнить команды
 
